@@ -29,4 +29,5 @@ It's only notifies when battery level lower than and upper than any threshold an
 * implement as daemon according to [pep-3143](https://www.python.org/dev/peps/pep-3143/)
 * make crossplatform
 * add tests
-
+* add run script
+* add installation script
