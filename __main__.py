@@ -18,20 +18,23 @@ def load_config():
 
     for line in file:
         if not line.startswith("#"):
-            if "interval" in line:
-                interval = line.split("=")[1].strip()
-            if "lower_threshold" in line:
-                lower_threshold = line.split("=")[1].strip()
-            if "upper_threshold" in line:
-                upper_threshold = line.split("=")[1].strip()
-            if "battery_low_body" in line:
-                strings[0] = line.split("=")[1].strip()
-            if "battery_low_summary" in line:
-                strings[1] = line.split("=")[1].strip()
-            if "battery_up_body" in line:
-                strings[2] = line.split("=")[1].strip()
-            if "battery_up_summary" in line:
-                strings[3] = line.split("=")[1].strip()
+            key, value = line.split("=", maxsplit=2)
+            key = key.strip()
+            value = value.strip().strip("\"")
+            if "interval" == key:
+                interval = value
+            if "lower_threshold" == key:
+                lower_threshold = value
+            if "upper_threshold" == key:
+                upper_threshold = value
+            if "battery_low_body" == key:
+                strings[0] = value
+            if "battery_low_summary" == key:
+                strings[1] = value
+            if "battery_up_body" == key:
+                strings[2] = value
+            if "battery_up_summary" == key:
+                strings[3] = value
     return int(interval), int(lower_threshold), int(upper_threshold), strings
 
 
