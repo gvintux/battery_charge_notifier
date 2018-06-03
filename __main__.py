@@ -2,10 +2,10 @@ import gi
 import os
 import sys
 
-gi.require_version('Notify', '0.7')
+gi.require_version("Notify", "0.7")
 sys.path.append(os.path.realpath(os.path.curdir))
 from gi.repository import Notify
-from .battery_charge_notifier import *
+from .battery_charge_notifier import BatteryChargeNotifier
 
 
 def load_config():
